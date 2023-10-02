@@ -45,6 +45,6 @@ Options:
 
 Add the names and GitHub IDs of your team members here.
 
-- Zhiyi Chen
+- [Zhiyi Chen](https://github.com/zhiyiyi)
 - [Ruiz Rivera](https://github.com/vanislekahuna)
 - [Alice Liang](https://github.com/Aliceliangwk)
