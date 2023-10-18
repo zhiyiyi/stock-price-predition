@@ -1,5 +1,5 @@
 tasks:
-  - source: src/etl/extract_stock_data.py
+  - source: src/etl/refresh_data.py # Used to be /extract_stock_data.py
     product:
       nb: src/products/extract-pipeline.ipynb
       data: data.duckdb
