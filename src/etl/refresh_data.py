@@ -1,9 +1,10 @@
 import os
 import duckdb
 import pandas as pd
+import yfinance as yf
+from datetime import datetime, timedelta
 from extract_stock_data import refresh_data
 from dotenv import load_dotenv
-
 
 # def refresh_data(token, ticker):
 #     """
@@ -32,7 +33,7 @@ from dotenv import load_dotenv
 
 #     # Extracting the historical market data (i.e. latest_day = (latest_day - timedelta(days=5)))
 #     ticker = yf.Ticker(ticker)
-    
+
 #     recent_data = ticker.history(period="1d", interval="2m", start=latest_day, end=today)
 #     recent_data = recent_data.rename_axis(["DateTime"]).reset_index().rename(columns={
 #             "DateTime": "datetime",
@@ -44,10 +45,11 @@ from dotenv import load_dotenv
 #             "Dividends": "dividends",
 #             "Stock Splits": "stock_splits"
 #         })
-    
+
 #     con.sql("INSERT INTO stocks_clouddb.msft_data SELECT * FROM recent_data")
 #     con.commit()
 #     con.close() 
+
 
 ticker = "MSFT"
 load_dotenv()

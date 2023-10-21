@@ -1,5 +1,24 @@
-tasks:
-  - source: src/etl/extract_stock_data.py
-    product:
-      nb: src/products/extract-pipeline.ipynb
-      data: data.duckdb
+name: Refresh Data Pipeline
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "45 23 * * 5"
+
+jobs:
+  routine-task:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Execute routine task
+      run: |
+        # Your commands for the routine task
+
+        tasks:
+          - source: src/etl/refresh_data.py 
+            product: 
+
