@@ -3,3 +3,8 @@ duckdb==0.9.1
 poetry==1.5.1
 pandas<2.7.0
 numpy<1.21.0
+matplotlib==3.8.0
+seaborn==0.13.0
+plotly==5.17.0
+python-dotenv
+numpy<1.21.0

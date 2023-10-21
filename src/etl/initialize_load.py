@@ -34,11 +34,10 @@ def initialize_duckdb(table_name, df, db_name):
     """    
 
     connection.sql(create_table_query)
-
-
+    
     # Load Pandas DataFrame into the DuckDB table
     connection.sql("INSERT INTO msft_data SELECT * FROM df") #persistent table
-
+    
     # Saving our progress
     connection.commit()
 
