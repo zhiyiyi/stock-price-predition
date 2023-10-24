@@ -1,5 +1,6 @@
 yfinance==0.2.31
 duckdb==0.9.1
+poetry==1.5.1
 pandas<2.7.0
 matplotlib==3.8.0
 seaborn==0.13.0
