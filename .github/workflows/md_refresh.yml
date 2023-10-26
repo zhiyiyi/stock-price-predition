@@ -1,0 +1,27 @@
+name: Refresh Data Pipeline
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "45 23 * * 5"
+
+jobs:
+  routine-task:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install the requirements in the txt file using pip
+      run: |
+        python -m pip -r requirements.txt
+
+    - name: Accessing motherduck token
+      env:
+        motherduck_token: ${{ secrets.motherduck_token }}
+
+    - name: Executing py script refreshing data on Motherduck.
+      run: |
+        python src/etl/refresh_data.py  
