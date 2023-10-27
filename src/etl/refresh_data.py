@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 
 
 ticker = "MSFT"
-load_dotenv()
+load_dotenv(".env")
 token = os.getenv("motherduck_token")
 
 
