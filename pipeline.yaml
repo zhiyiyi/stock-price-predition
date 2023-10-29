@@ -1,0 +1,9 @@
+tasks:
+  - source: src/etl/initialize_load.py
+    product:
+      nb: src/products/initialize_load.ipynb
+      data: msft_database.duckdb
+
+  - source: src/etl/eda.ipynb
+    product:
+      nb: src/products/eda.ipynb
