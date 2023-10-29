@@ -1,7 +1,13 @@
+# + tags=["parameters"]
+# declare a list tasks whose products you want to use as inputs
 import duckdb
-import pandas as pd
-import numpy as np
-from extract_stock_data import extract_stock_data
+from src.etl.extract_stock_data import extract_stock_data
+upstream = None
+
+# -
+
+upstream = None
+
 
 def initialize_duckdb(table_name, df, db_name):
     """
@@ -21,7 +27,7 @@ def initialize_duckdb(table_name, df, db_name):
 
     # Create a table
     create_table_query = f"""
-    CREATE TABLE {table_name} (
+    CREATE TABLE IF NOT EXISTS {table_name} (
         datetime TIMESTAMP,
         open_price DOUBLE,
         day_high DOUBLE,
@@ -31,13 +37,14 @@ def initialize_duckdb(table_name, df, db_name):
         dividends DOUBLE,
         stock_splits FLOAT
     );
-    """    
+    """
 
     connection.sql(create_table_query)
-    
+
     # Load Pandas DataFrame into the DuckDB table
-    connection.sql("INSERT INTO msft_data SELECT * FROM df") #persistent table
-    
+    # persistent table
+    connection.sql(f"INSERT INTO {table_name} SELECT * FROM df")
+
     # Saving our progress
     connection.commit()
 
@@ -47,11 +54,9 @@ def initialize_duckdb(table_name, df, db_name):
 
 # Executing the program
 if __name__ == "__main__":
-    
-    # Specifying the names of our table and the stock ticker we want to pull data from:
-    table_name = str(input("Provide a table name: "))
-    ticker = str(input("Enter the ticker symbol you wish to extract data for (i.e. 'MSFT'): "))
-    database_name = str(input("Provide a name for the DuckDB database we'll be creating: "))
+    table_name = "msft_data"
+    ticker = "MSFT"
+    database_name = "msft_database"
 
     # Extracting stock data from the yfinance API
     df = extract_stock_data(ticker)
