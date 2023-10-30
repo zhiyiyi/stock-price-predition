@@ -16,9 +16,7 @@ By the end of this program, participants will have had exposure and developed th
 - Strong communication skills for conveying data insights to stakeholders.
 
 
-## :newspaper: Description
-
-As part of Ploomber's Hacktober 2023 initiative, our project will focus on building an extract-load-transform (ELT) pipeline connecting the live stock market data from the `yfinance` API to our [Mother Duck](https://motherduck.com/) cloud warehouse. Our reason for approaching this challenge head-on was for the implicit payoff of honing our collective Data Science/Engineering skillset along with the opportunity for economic gain should we succeed in building an accurate model :money_mouth_face:
+As part of Ploomber's Hacktober 2023 initiative, our project will focus on building an extract-load-transform (ELT) pipeline connecting the live stock market data from the `yfinance` API to our [Mother Duck](https://motherduck.com/) cloud warehouse. With this project, our intent was to apply modern best practices of Data Engineering and Machine Learning to the domain of Finance and Investing in order to help investors make optimal, data-driven decisions with their portfolios. In addition to the implicit payoff of honing our collective Data Science/Engineering skillset was also the the opportunity for economic gain should we succeed in building an accurate model :money_mouth_face:
 
 With the vast array of stock market data in our cloud infrastructure, we'll then fit various machine learning models to generate predictions on our dataset and deploying our model using Ploomber cloud.
 
@@ -31,8 +29,8 @@ The historical stock price data for a given ticker can be accessed by inputting 
 ```
 import yfinance as yf
 
-googl = yf.Ticker("GOOGL")
-df = google.history(period='max')
+msft = yf.Ticker("MSFT")
+df = msft.history(period='max')
 ```
 
 Below are the parameters available to specify the intervals from which you wish to pull stock data from:
