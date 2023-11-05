@@ -88,4 +88,4 @@ def refresh_data(token):
 
     con.sql("INSERT INTO stocks_clouddb.msft_data SELECT * FROM recent_data")
     con.commit()
-    con.close() 
+    con.close()
