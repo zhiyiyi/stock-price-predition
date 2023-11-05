@@ -46,7 +46,7 @@ def extract_stock_data(symbol=str):
     return stock_df
 
 
-def refresh_data(token, ticker):
+def refresh_data(token):
     """
     This function refreshes the MotherDuck cloud database by extracting stock prices at 2 min intervals from our latest entry 
     to the datetime value of when this function was activated.
@@ -58,7 +58,7 @@ def refresh_data(token, ticker):
     ticker: str
         The ticker symbol for the stock you want to pull data from
     """
-
+    # connect to the database
     con = duckdb.connect(f"md:?motherduck_token={token}")
     recent_day_query = """
     SELECT datetime
@@ -74,8 +74,7 @@ def refresh_data(token, ticker):
     # Extracting the historical market data (i.e. latest_day = (latest_day - timedelta(days=5)))
     ticker = yf.Ticker(ticker)
 
-    recent_data = ticker.history(
-        period="1d", interval="2m", start=latest_day, end=today)
+    recent_data = ticker.history(period="1d", interval="2m", start=latest_day, end=today)
     recent_data = recent_data.rename_axis(["DateTime"]).reset_index().rename(columns={
         "DateTime": "datetime",
         "Open": "open_price",
