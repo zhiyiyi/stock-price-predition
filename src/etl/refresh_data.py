@@ -3,7 +3,7 @@ import duckdb
 import pandas as pd
 import yfinance as yf
 from datetime import datetime, timedelta
-from src.etl.extract_stock_data import refresh_data
+from extract_stock_data import refresh_data
 # from dotenv import load_dotenv
 from os import environ
 

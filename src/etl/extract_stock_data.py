@@ -69,7 +69,7 @@ def refresh_data(token, ticker):
 
     latest_day = con.sql(recent_day_query).fetchall()[0][0]
     today = datetime.today()
-    # ticker = "MSFT"
+    ticker = "MSFT"
 
     # Extracting the historical market data (i.e. latest_day = (latest_day - timedelta(days=5)))
     ticker = yf.Ticker(ticker)

@@ -1,7 +1,7 @@
 # + tags=["parameters"]
 # declare a list tasks whose products you want to use as inputs
 import duckdb
-from src.etl.extract_stock_data import extract_stock_data
+from extract_stock_data import extract_stock_data
 upstream = None
 
 # -
