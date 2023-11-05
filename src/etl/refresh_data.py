@@ -7,7 +7,7 @@ from extract_stock_data import refresh_data
 from os import environ
 # from dotenv import load_dotenv
 
-token = environ.get("TOKEN", None)
+token = environ.get("motherduck_token", None)
 # ticker = "MSFT"
 # load_dotenv(".env")
 # token = os.getenv("motherduck_token")
