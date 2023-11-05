@@ -19,7 +19,7 @@ jobs:
         python -m pip install -r requirements.txt
 
     - name: Accessing motherduck token
-      run: echo "motherduck_token: ${{ secrets.motherduck_token }}" >> config.yaml
+      run: echo "motherduck_token=${{ secrets.motherduck_token }}" >> .env
 
     - name: Executing py script refreshing data on Motherduck.
       run: |
