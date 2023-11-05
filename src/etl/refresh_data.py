@@ -9,9 +9,9 @@ from os import environ
 
 
 token = environ.get("TOKEN", None)
-ticker = "MSFT"
+# ticker = "MSFT"
 # load_dotenv(".env")
 # token = os.getenv("motherduck_token")
 
 if __name__ == "__main__":
-    refresh_data(token, ticker)
+    refresh_data(token)
