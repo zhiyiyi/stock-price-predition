@@ -8,6 +8,8 @@ from os import environ
 # from dotenv import load_dotenv
 
 token = environ.get("motherduck_token", None)
+print(token)
+# token = environ.get("TOKEN", None)
 # ticker = "MSFT"
 # load_dotenv(".env")
 # token = os.getenv("motherduck_token")
