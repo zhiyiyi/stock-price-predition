@@ -7,3 +7,6 @@ tasks:
   - source: src/etl/eda.ipynb
     product:
       nb: src/products/eda.ipynb
+  - source: src/etl/machine_learning.ipynb
+    product:
+      nb: src/products/machine_learning.ipynb
