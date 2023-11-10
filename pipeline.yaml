@@ -8,9 +8,9 @@ tasks:
     product:
       nb: src/products/eda.ipynb
 
-  - source: src/etl/machine_learning.ipynb
+  - source: src/etl/lstm.ipynb
     product:
-      nb: src/products/machine_learning.ipynb
+      nb: src/products/lstm.ipynb
 
   - source: src/etl/arima.ipynb
     product:
