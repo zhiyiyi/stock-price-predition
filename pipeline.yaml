@@ -7,3 +7,11 @@ tasks:
   - source: src/etl/eda.ipynb
     product:
       nb: src/products/eda.ipynb
+
+  - source: src/etl/lstm.ipynb
+    product:
+      nb: src/products/lstm.ipynb
+
+  - source: src/etl/arima.ipynb
+    product:
+      nb: src/products/arima.ipynb
