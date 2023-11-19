@@ -4,9 +4,10 @@ import pandas as pd
 import yfinance as yf
 from datetime import datetime, timedelta
 from extract_stock_data import refresh_data
+from motherduck_token import token 
 # from dotenv import load_dotenv
 
-token = os.environ.get('motherduck_token')
+# token = os.environ.get('motherduck_token')
 print(f"token: '{token}'")
 
 # Check if the environment variable is set
