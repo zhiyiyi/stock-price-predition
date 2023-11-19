@@ -16,12 +16,11 @@ jobs:
 
     - name: Install the requirements in the txt file using pip
       run: |
-        python -m pip -r requirements.txt
+        python -m pip install -r requirements.txt
 
     - name: Accessing motherduck token
-      env:
-        motherduck_token: ${{ secrets.motherduck_token }}
+      run: export TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uIjoicnVpei5yaXZlcmE5My5nbWFpbC5jb20iLCJlbWFpbCI6InJ1aXoucml2ZXJhOTNAZ21haWwuY29tIiwidXNlcklkIjoiZGJiMmE2ZmYtMmZjNi00YjM2LTkzOGQtYzBmMzI5MWRlMWY4IiwiaWF0IjoxNjk5MTU2ODY3LCJleHAiOjE3MzA3MTQ0Njd9.thS_zI3creCQvb5ctSXaxt9nUvNvep7La2M-faJ0j3A"
 
     - name: Executing py script refreshing data on Motherduck.
       run: |
-        python src/etl/refresh_data.py  
+        python src/etl/refresh_data.py
