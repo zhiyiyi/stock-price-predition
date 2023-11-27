@@ -18,10 +18,7 @@ jobs:
       run: |
         python -m pip -r requirements.txt
 
-    - name: Accessing motherduck token
-      env:
-        motherduck_token: ${{ secrets.motherduck_token }}
-
     - name: Executing py script refreshing data on Motherduck.
       run: |
+        echo "token = '$(grep ^motherduck_token .env | cut -d= -f2)'" > src/etl/motherduck_token.py  
         python src/etl/refresh_data.py  
