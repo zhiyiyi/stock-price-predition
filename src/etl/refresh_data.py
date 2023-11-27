@@ -4,7 +4,7 @@ import pandas as pd
 import yfinance as yf
 from datetime import datetime, timedelta
 from extract_stock_data import refresh_data
-from motherduck_token import token 
+from motherduck_token import motherduck_token 
 
 # Check if the token object is set
 if token is None:
