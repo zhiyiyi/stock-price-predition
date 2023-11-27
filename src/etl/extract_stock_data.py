@@ -97,4 +97,4 @@ def refresh_data(token):
             print("The most recent stock data has already been extracted. Refreshing the database is not necessary.")
         else:
             # Handle other BinderExceptions or re-raise the exception
-            raise
+            raise duckdb.duckdb.InvalidInputException("Please login to your MotherDuck account first.")
