@@ -20,7 +20,8 @@ jobs:
 
 
     - name: Access MotherDuck Token
-      run: echo "motherduck_token: ${{ secrets.motherduck_token }}" >> src/etl/motherduck_token.py
+      run: | 
+        echo "token: ${{ secrets.motherduck_token }}" >> src/etl/motherduck_token.py
 
 
     - name: Executing py script refreshing data on Motherduck.
