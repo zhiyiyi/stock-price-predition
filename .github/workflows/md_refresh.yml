@@ -16,7 +16,7 @@ jobs:
 
     - name: Install the requirements in the txt file using pip
       run: |
-        python -m pip -r requirements.txt
+        python -m pip install -r requirements.txt
 
     - name: Executing py script refreshing data on Motherduck.
       run: |
